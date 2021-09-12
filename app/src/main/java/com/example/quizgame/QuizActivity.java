@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,6 +51,7 @@ public class QuizActivity extends AppCompatActivity {
 
         Random random = new Random();
         int rand = random.nextInt(12);
+        Log.d("random", String.valueOf(rand));
         database.collection("categories")
                 .document(catId)
                 .collection("questions")
@@ -101,7 +103,21 @@ public class QuizActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-
+                if (timer!=null)
+                    timer.cancel();
+                timer.start();
+                index++;
+                if (index < questions.size()){
+                    binding.questionCounter.setText(String.format("%d/%d",(index+1),questions.size()));
+                    // // getting questions object from array
+                    question = questions.get(index);
+                    // //Setting fields with question and options
+                    binding.question.setText(question.getQuestion());
+                    binding.option1.setText(question.getOption1());
+                    binding.option2.setText(question.getOption2());
+                    binding.option3.setText(question.getOption3());
+                    binding.option4.setText(question.getOption4());
+                }
             }
         };
     }

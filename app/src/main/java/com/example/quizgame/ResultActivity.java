@@ -1,14 +1,12 @@
 package com.example.quizgame;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quizgame.databinding.ActivityResultBinding;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FieldPath;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -41,7 +39,7 @@ public class ResultActivity extends AppCompatActivity {
 //        binding.restartBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                startActivity(new Intent(getApplicationContext(),QuizActivity.class));
+//                startActivity(new Intent(getApplicationContext(),HomeFragment.class));
 //                finish();
 //            }
 //        });

@@ -1,14 +1,13 @@
 package com.example.quizgame;
 
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.example.quizgame.databinding.FragmentWalletBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -69,7 +68,7 @@ public class WalletFragment extends Fragment {
         binding.sendRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (user.getCoins() > 50000){
+                if (user.getCoins() > 20000){
                     String uid = FirebaseAuth.getInstance().getUid();
                     String number = String.valueOf(binding.contactBox.getText());
                     WithdrawRequest request = new WithdrawRequest(uid, number,user.getName());
@@ -101,7 +100,7 @@ public class WalletFragment extends Fragment {
                     });
 
                 }else {
-                    Toast.makeText(getContext(), "Earn 50,000 coins to withdraw", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Earn 20,000 coins to withdraw", Toast.LENGTH_SHORT).show();
                 }
             }
         });

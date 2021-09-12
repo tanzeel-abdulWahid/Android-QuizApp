@@ -8,11 +8,10 @@ public class User {
     public User() {
     }
 
-    public User(String name, String email, String password, String referCode) {
+    public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.referCode = referCode;
     }
 
     public String getName() {
@@ -39,13 +38,13 @@ public class User {
         this.password = password;
     }
 
-    public String getReferCode() {
-        return referCode;
-    }
-
-    public void setReferCode(String referCode) {
-        this.referCode = referCode;
-    }
+//    public String getReferCode() {
+//        return referCode;
+//    }
+//
+//    public void setReferCode(String referCode) {
+//        this.referCode = referCode;
+//    }
     public long getCoins() {
         return coins;
     }
